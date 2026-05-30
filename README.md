@@ -15,7 +15,7 @@
 <body>
 
 <div class="box">
-    <h2>مولد كروت DATHIUN (مستطيل)</h2>
+    <h2>مولد كروت  (3D VERSE)</h2>
     <input type="file" id="imgInput" accept="image/*">
     <input type="text" id="nameInput" placeholder="اسم المنتج">
     <input type="text" id="priceInput" placeholder="السعر">
@@ -55,11 +55,14 @@ function generate() {
             const name = document.getElementById('nameInput').value;
             const cat = document.getElementById('catInput').value;
 
-            const code = `<div class="neon-card" data-category="${cat}">
-    <img src="${dataUrl}" loading="lazy">
-    <h3>${name}</h3>
-    <p>${price} د.ع</p>
-    <a href="https://wa.me/9647710705445?text=اريد طلب ${name} بسعر ${price} د.ع" class="neon-btn">اطلبه الآن من الواتساب 💬</a>
+            // تم إضافة حاوية الـ product-grid هنا لضمان الترتيب الأفقي وظهور الإطارات بشكل صحيح دائماً
+            const code = `<div class="product-grid">
+    <div class="fire-card" data-category="${cat}">
+        <img src="${dataUrl}" loading="lazy">
+        <h3>${name}</h3>
+        <p>${price} د.ع</p>
+        <a href="https://wa.me/9647710705445?text=اريد طلب ${name} بسعر ${price} د.ع" class="fire-btn">اطلبه الآن من الواتساب 💬</a>
+    </div>
 </div>`;
             document.getElementById('output').style.display = 'block';
             document.getElementById('output').value = code;
@@ -77,33 +80,64 @@ function copyCode() {
 }
 </script>
 
-<style id="neon-style">
-    /* الحاوية الكبيرة */
-    .product-grid { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; justify-content: center; }
+<style id="fire-style">
+    /* الحاوية الكبيرة التي تمنع الترتيب العمودي العشوائي */
+    .product-grid { 
+        display: flex; 
+        flex-wrap: wrap; 
+        gap: 20px; 
+        padding: 20px; 
+        justify-content: center; 
+        width: 100%;
+        box-sizing: border-box;
+    }
     
-    /* الكرت مستطيل طولي (نسبة 4:6 تقريباً) */
-    .neon-card { 
+    /* الكرت مستطيل طولي بالألوان الجديدة وإطار واضح وثابت */
+    .fire-card { 
         width: calc(25% - 20px); 
-        min-width: 200px; 
+        min-width: 220px; 
+        max-width: 280px;
         aspect-ratio: 4/6; 
-        background: #000; 
-        border: 2px solid #885cfb; 
+        background: #1a1a1a; /* خلفية داكنة لتبرز الإطار الملون */
+        border: 2px solid #885cfb; /* إطار بنفسجي أساسي واضح */
         border-radius: 15px; 
         padding: 15px; 
         text-align: center; 
-        box-shadow: 0 0 10px rgba(54, 229, 245, 0.2); 
-        transition: 0.4s; 
-        display: flex; flex-direction: column; justify-content: space-between;
+        box-shadow: 0 4px 15px rgba(136, 92, 251, 0.2); 
+        transition: all 0.4s ease; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: space-between;
+        box-sizing: border-box;
     }
-    .neon-card:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(54, 229, 245, 0.6); border-color: #36e5f5; }
+    
+    /* تأثير التمرير المضيء بالسمائي */
+    .fire-card:hover { 
+        transform: translateY(-5px); 
+        border-color: #36e5f5; 
+        box-shadow: 0 0 25px rgba(54, 229, 245, 0.5); 
+    }
     
     /* الصورة المربعة داخل المستطيل */
-    .neon-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; }
+    .fire-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; }
     
-    .neon-card h3 { color: #fff; font-size: 18px; margin: 10px 0; }
-    .neon-card p { color: #36e5f5; font-weight: bold; font-size: 16px; margin-bottom: 10px; }
-    .neon-btn { display: block; background: linear-gradient(to right, #885cfb, #36e5f5); color: #fff; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 14px; margin-top: auto; transition: 0.3s; }
-    .neon-btn:hover { opacity: 0.9; box-shadow: 0 0 10px rgba(54, 229, 245, 0.4); }
+    .fire-card h3 { color: #fff; font-size: 18px; margin: 10px 0; }
+    .fire-card p { color: #36e5f5; font-weight: bold; font-size: 16px; margin-bottom: 10px; }
+    
+    /* زر الواتساب بالتدرج اللوني الجديد */
+    .fire-btn { 
+        display: block; 
+        background: linear-gradient(135deg, #885cfb, #36e5f5); 
+        color: #fff; 
+        padding: 12px; 
+        border-radius: 8px; 
+        text-decoration: none; 
+        font-weight: bold; 
+        font-size: 14px; 
+        margin-top: auto; 
+        transition: 0.3s; 
+    }
+    .fire-btn:hover { opacity: 0.9; box-shadow: 0 4px 10px rgba(54, 229, 245, 0.3); }
 </style>
 </body>
 </html>
