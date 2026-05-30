@@ -2,19 +2,20 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>Eng.HARITH Generator Pro</title>
+    <title>DATHIUN Generator Pro</title>
     <style>
         body { background: #121212; color: #fff; font-family: sans-serif; padding: 20px; }
-        .box { max-width: 500px; margin: auto; background: #1e1e1e; padding: 20px; border-radius: 15px; border: 2px solid #8e4bfa; }
+        .box { max-width: 500px; margin: auto; background: #1e1e1e; padding: 20px; border-radius: 15px; border: 2px solid #885cfb; }
         input, select, button { width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px; border: none; box-sizing: border-box; }
-        button { background: #36e5f5; color: #fff; font-weight: bold; cursor: pointer; }
-        #output { width: 100%; height: 150px; margin-top: 10px; background: #000; color: #0f0; padding: 10px; border: 1px solid #444; display: none; }
+        button { background: #885cfb; color: #fff; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #36e5f5; color: #000; }
+        #output { width: 100%; height: 150px; margin-top: 10px; background: #000; color: #36e5f5; padding: 10px; border: 1px solid #444; display: none; }
     </style>
 </head>
 <body>
 
 <div class="box">
-    <h2>مولد كروت  (3D VERSE)</h2>
+    <h2>مولد كروت DATHIUN (مستطيل)</h2>
     <input type="file" id="imgInput" accept="image/*">
     <input type="text" id="nameInput" placeholder="اسم المنتج">
     <input type="text" id="priceInput" placeholder="السعر">
@@ -54,11 +55,11 @@ function generate() {
             const name = document.getElementById('nameInput').value;
             const cat = document.getElementById('catInput').value;
 
-            const code = `<div class="fire-card" data-category="${cat}">
+            const code = `<div class="neon-card" data-category="${cat}">
     <img src="${dataUrl}" loading="lazy">
     <h3>${name}</h3>
     <p>${price} د.ع</p>
-    <a href="https://wa.me/9647773113888?text=اريد طلب ${name} بسعر ${price} د.ع" class="fire-btn">اطلبه الآن من الواتساب 💬</a>
+    <a href="https://wa.me/9647710705445?text=اريد طلب ${name} بسعر ${price} د.ع" class="neon-btn">اطلبه الآن من الواتساب 💬</a>
 </div>`;
             document.getElementById('output').style.display = 'block';
             document.getElementById('output').value = code;
@@ -76,12 +77,12 @@ function copyCode() {
 }
 </script>
 
-<style id="fire-style">
+<style id="neon-style">
     /* الحاوية الكبيرة */
     .product-grid { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; justify-content: center; }
     
     /* الكرت مستطيل طولي (نسبة 4:6 تقريباً) */
-    .fire-card { 
+    .neon-card { 
         width: calc(25% - 20px); 
         min-width: 200px; 
         aspect-ratio: 4/6; 
@@ -90,18 +91,19 @@ function copyCode() {
         border-radius: 15px; 
         padding: 15px; 
         text-align: center; 
-        box-shadow: 0 0 10px rgba(255,69,0,0.3); 
+        box-shadow: 0 0 10px rgba(54, 229, 245, 0.2); 
         transition: 0.4s; 
         display: flex; flex-direction: column; justify-content: space-between;
     }
-    .fire-card:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(255,69,0,0.7); }
+    .neon-card:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(54, 229, 245, 0.6); border-color: #36e5f5; }
     
     /* الصورة المربعة داخل المستطيل */
-    .fire-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; }
+    .neon-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; }
     
-    .fire-card h3 { color: #fff; font-size: 18px; margin: 10px 0; }
-    .fire-card p { color: #36e5f5; font-weight: bold; font-size: 16px; margin-bottom: 10px; }
-    .fire-btn { display: block; background: linear-gradient(to right, #36e5f5, #885cfb); color: #000; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 14px; margin-top: auto; }
+    .neon-card h3 { color: #fff; font-size: 18px; margin: 10px 0; }
+    .neon-card p { color: #36e5f5; font-weight: bold; font-size: 16px; margin-bottom: 10px; }
+    .neon-btn { display: block; background: linear-gradient(to right, #885cfb, #36e5f5); color: #fff; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 14px; margin-top: auto; transition: 0.3s; }
+    .neon-btn:hover { opacity: 0.9; box-shadow: 0 0 10px rgba(54, 229, 245, 0.4); }
 </style>
 </body>
 </html>
