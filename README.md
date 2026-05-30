@@ -2,19 +2,19 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>DATHIUN Generator Pro</title>
+    <title>Eng.HARITH Generator Pro</title>
     <style>
         body { background: #121212; color: #fff; font-family: sans-serif; padding: 20px; }
-        .box { max-width: 500px; margin: auto; background: #1e1e1e; padding: 20px; border-radius: 15px; border: 2px solid #ff4500; }
+        .box { max-width: 500px; margin: auto; background: #1e1e1e; padding: 20px; border-radius: 15px; border: 2px solid #8e4bfa; }
         input, select, button { width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px; border: none; box-sizing: border-box; }
-        button { background: #ff4500; color: #fff; font-weight: bold; cursor: pointer; }
+        button { background: #36e5f5; color: #fff; font-weight: bold; cursor: pointer; }
         #output { width: 100%; height: 150px; margin-top: 10px; background: #000; color: #0f0; padding: 10px; border: 1px solid #444; display: none; }
     </style>
 </head>
 <body>
 
 <div class="box">
-    <h2>مولد كروت DATHIUN (مستطيل)</h2>
+    <h2>مولد كروت  (3D VERSE)</h2>
     <input type="file" id="imgInput" accept="image/*">
     <input type="text" id="nameInput" placeholder="اسم المنتج">
     <input type="text" id="priceInput" placeholder="السعر">
@@ -58,7 +58,7 @@ function generate() {
     <img src="${dataUrl}" loading="lazy">
     <h3>${name}</h3>
     <p>${price} د.ع</p>
-    <a href="https://wa.me/9647710705445?text=اريد طلب ${name} بسعر ${price} د.ع" class="fire-btn">اطلبه الآن من الواتساب 💬</a>
+    <a href="https://wa.me/9647773113888?text=اريد طلب ${name} بسعر ${price} د.ع" class="fire-btn">اطلبه الآن من الواتساب 💬</a>
 </div>`;
             document.getElementById('output').style.display = 'block';
             document.getElementById('output').value = code;
@@ -86,7 +86,7 @@ function copyCode() {
         min-width: 200px; 
         aspect-ratio: 4/6; 
         background: #000; 
-        border: 2px solid #ff4500; 
+        border: 2px solid #885cfb; 
         border-radius: 15px; 
         padding: 15px; 
         text-align: center; 
@@ -100,8 +100,8 @@ function copyCode() {
     .fire-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; }
     
     .fire-card h3 { color: #fff; font-size: 18px; margin: 10px 0; }
-    .fire-card p { color: #ffcc00; font-weight: bold; font-size: 16px; margin-bottom: 10px; }
-    .fire-btn { display: block; background: linear-gradient(to right, #ff4500, #ff8c00); color: #000; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 14px; margin-top: auto; }
+    .fire-card p { color: #36e5f5; font-weight: bold; font-size: 16px; margin-bottom: 10px; }
+    .fire-btn { display: block; background: linear-gradient(to right, #36e5f5, #885cfb); color: #000; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 14px; margin-top: auto; }
 </style>
 </body>
 </html>
