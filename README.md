@@ -5,10 +5,11 @@
     <title>Eng.HARETH Generator Pro</title>
     <style>
         body { background: #121212; color: #fff; font-family: sans-serif; padding: 20px; }
-        .box { max-width: 500px; margin: auto; background: #1e1e1e; padding: 20px; border-radius: 15px; border: 2px solid #8e4bfa; }
+        .box { max-width: 500px; margin: auto; background: #1e1e1e; padding: 20px; border-radius: 15px; border: 2px solid #885cfb; }
         input, select, button { width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px; border: none; box-sizing: border-box; }
-        button { background: #36e5f5; color: #fff; font-weight: bold; cursor: pointer; }
-        #output { width: 100%; height: 150px; margin-top: 10px; background: #000; color: #0f0; padding: 10px; border: 1px solid #444; display: none; }
+        button { background: #885cfb; color: #fff; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #36e5f5; color: #121212; }
+        #output { width: 100%; height: 150px; margin-top: 10px; background: #000; color: #36e5f5; padding: 10px; border: 1px solid #444; display: none; }
     </style>
 </head>
 <body>
@@ -78,30 +79,51 @@ function copyCode() {
 
 <style id="fire-style">
     /* الحاوية الكبيرة */
-    .product-grid { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; justify-content: center; }
+    .product-grid { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; justify-content: center; width: 100%; box-sizing: border-box; }
     
-    /* الكرت مستطيل طولي (نسبة 4:6 تقريباً) */
+    /* الكرت مستطيل طولي بالألوان الجديدة */
     .fire-card { 
         width: calc(25% - 20px); 
         min-width: 200px; 
         aspect-ratio: 4/6; 
         background: #000; 
-        border: 2px solid #885cfb; 
+        border: 2px solid #885cfb; /* إطار بنفسجي ثابت وواضح */
         border-radius: 15px; 
         padding: 15px; 
         text-align: center; 
-        box-shadow: 0 0 10px rgba(255,69,0,0.3); 
-        transition: 0.4s; 
+        box-shadow: 0 4px 12px rgba(136, 92, 251, 0.2); /* توهج بنفسجي خفيف خلف الكرت */
+        transition: 0.4s ease-in-out; 
         display: flex; flex-direction: column; justify-content: space-between;
+        box-sizing: border-box;
     }
-    .fire-card:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(0, 208, 255, 0.7); }
+    
+    /* عند تمرير الماوس يتحول الإطار والتوهج بالكامل للسمائي المضيء */
+    .fire-card:hover { 
+        transform: scale(1.05); 
+        border-color: #36e5f5; 
+        box-shadow: 0 0 25px rgba(54, 229, 245, 0.6); 
+    }
     
     /* الصورة المربعة داخل المستطيل */
     .fire-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; }
     
     .fire-card h3 { color: #fff; font-size: 18px; margin: 10px 0; }
-    .fire-card p { color: #b364fd; font-weight: bold; font-size: 16px; margin-bottom: 10px; }
-    .fire-btn { display: block; background: linear-gradient(to right, #36e5f5, #885cfb); color: #000; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 14px; margin-top: auto; }
+    .fire-card p { color: #36e5f5; font-weight: bold; font-size: 16px; margin-bottom: 10px; } /* تعديل لون السعر للسمائي ليكون مريح للعين بارز */
+    
+    /* زر الواتساب بتدرج انسيابي ممتاز من السمائي للبنفسجي ونص أبيض واضح */
+    .fire-btn { 
+        display: block; 
+        background: linear-gradient(to right, #36e5f5, #885cfb); 
+        color: #fff; 
+        padding: 10px; 
+        border-radius: 5px; 
+        text-decoration: none; 
+        font-weight: bold; 
+        font-size: 14px; 
+        margin-top: auto;
+        transition: 0.3s;
+    }
+    .fire-btn:hover { opacity: 0.9; box-shadow: 0 2px 8px rgba(54, 229, 245, 0.4); }
 </style>
 </body>
 </html>
